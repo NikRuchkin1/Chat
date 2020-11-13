@@ -1,3 +1,4 @@
+@import 'reset-css';
 @import 'antd/dist/antd.css';
 
 body,
@@ -6,4 +7,5 @@ html,
 .wrapper {
   height: 100%;
   color: #202002;
+  font-size: 14px;
 }

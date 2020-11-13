@@ -6,8 +6,8 @@ import './Auth.scss';
 
 const Auth = () => {
   return (
-    <div className="auth_content">
-      <Route path={['/', '/login']} component={LoginForm} exact />
+    <div className="auth">
+      <Route exact path={['/', '/login']} component={LoginForm} />
       <Route path="/register" component={RegisterForm} exact />
     </div>
   );

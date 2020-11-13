@@ -1,0 +1,76 @@
+@import '../../styles/_variables';
+.message {
+  $self: &;
+  display: flex;
+  max-width: 440px;
+  margin-bottom: 15px;
+  &__avatar {
+    display: flex;
+    flex-direction: column-reverse;
+    img {
+      border-radius: 50px;
+      width: 33px;
+      height: 33px;
+      margin-right: 13px;
+      margin-bottom: 23px;
+    }
+  }
+  &__boxBubble {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    img {
+      margin-bottom: 11px;
+      margin-left: 5px;
+    }
+  }
+  &__bubble {
+    background: $blue;
+    box-shadow: 0px 5px 5px rgba(54, 116, 255, 0.1967);
+    border-radius: 12px 12px 12px 0px;
+    padding: 15px;
+    margin-bottom: 8px;
+  }
+  &__date {
+    opacity: 0.4;
+    font-size: 12px;
+  }
+  &__text {
+    color: #fff;
+    line-height: 20px;
+  }
+
+  &--isme {
+    display: flex;
+    flex-direction: row-reverse;
+    #{$self}__avatar {
+      img {
+        margin-right: 0px;
+        margin-left: 13px;
+      }
+    }
+    #{$self}__content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    #{$self}__boxBubble {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: flex-end;
+      img {
+        margin-bottom: 11px;
+        margin-right: 5px;
+      }
+      #{$self}__bubble {
+        background: #fff;
+        border: 1px solid #ececec;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.0220444);
+        border-radius: 12px 12px 0px 12px;
+      }
+    }
+    #{$self}__text {
+      color: $black;
+    }
+  }
+}
