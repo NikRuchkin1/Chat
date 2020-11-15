@@ -17,6 +17,18 @@ function Home() {
         avatar="https://sun1-29.userapi.com/impf/c851236/v851236624/1042ea/8WukqITT6jA.jpg?size=50x0&quality=88&crop=0,0,1000,1000&sign=d69f5386a0dc7f7e472cf46259eac9c1&ava=1"
         isMe={true}
       />
+      <Message
+        date="Fri Nov 13 2020 22:25:53"
+        text="Привет"
+        avatar="https://sun1-29.userapi.com/impf/c851236/v851236624/1042ea/8WukqITT6jA.jpg?size=50x0&quality=88&crop=0,0,1000,1000&sign=d69f5386a0dc7f7e472cf46259eac9c1&ava=1"
+        isMe={true}
+      />
+      <Message
+        date="Fri Nov 13 2020 22:25:53"
+        text="Привет"
+        avatar="https://sun1-29.userapi.com/impf/c851236/v851236624/1042ea/8WukqITT6jA.jpg?size=50x0&quality=88&crop=0,0,1000,1000&sign=d69f5386a0dc7f7e472cf46259eac9c1&ava=1"
+        isMe={true}
+      />
     </section>
   );
 }
