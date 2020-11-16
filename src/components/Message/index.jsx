@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import readed from '../../assets/img/readed.svg';
-import noreaded from '../../assets/img/noreaded.svg';
+import noReaded from '../../assets/img/noreaded.svg';
 
 import './Message.scss';
 
-function Message({ avatar, text, user, date, isMe }) {
+function Message({ avatar, text, user, date, isMe, isReaded }) {
   return (
     <div className={classNames('message', { 'message--isme': isMe })}>
       <div className="message__avatar">
@@ -17,7 +17,11 @@ function Message({ avatar, text, user, date, isMe }) {
           <div className="message__bubble">
             <p className="message__text">{text}</p>
           </div>
-          <img src={readed} alt="Message read" />
+          {isMe && isReaded ? (
+            <img src={readed} className="message__icon-readed" alt="Message read" />
+          ) : (
+            <img src={noReaded} className="message__icon-readed" alt="Message no read" />
+          )}
         </div>
         <span className="message__date">
           {
