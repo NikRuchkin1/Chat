@@ -2,7 +2,7 @@
 .message {
   $self: &;
   display: flex;
-  max-width: 440px;
+  // max-width: 440px;
   margin-bottom: 15px;
   &__avatar {
     display: flex;
@@ -24,11 +24,11 @@
       margin-bottom: 11px;
       margin-left: 5px;
     }
-    // img {
-    //   display: none;
-    //   margin-bottom: 11px;
-    //   margin-left: 5px;
-    // }
+    img {
+      display: none;
+      margin-bottom: 11px;
+      margin-left: 5px;
+    }
   }
   &__bubble {
     background: $blue;
@@ -66,6 +66,7 @@
       flex-direction: row-reverse;
       align-items: flex-end;
       img {
+        display: block;
         margin-bottom: 11px;
         margin-right: 5px;
       }

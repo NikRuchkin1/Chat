@@ -6,7 +6,7 @@ import noReaded from '../../assets/img/noreaded.svg';
 
 import './Message.scss';
 
-function Message({ avatar, text, user, date, isMe, isReaded }) {
+function Message({ avatar, text, user, date, isMe, isReaded, attachments }) {
   return (
     <div className={classNames('message', { 'message--isme': isMe })}>
       <div className="message__avatar">
@@ -22,6 +22,14 @@ function Message({ avatar, text, user, date, isMe, isReaded }) {
           ) : (
             <img src={noReaded} className="message__icon-readed" alt="Message no read" />
           )}
+          <div className="message__attachments">
+            {attachments &&
+              attachments.map((item) => (
+                <div className="message__attachments-item">
+                  <img src={item.url} alt={item.filename} />
+                </div>
+              ))}
+          </div>
         </div>
         <span className="message__date">
           {
@@ -44,6 +52,7 @@ Message.propTypes = {
   user: PropTypes.object,
   text: PropTypes.string,
   date: PropTypes.string,
+  attachments: PropTypes.array,
 };
 
 export default Message;
