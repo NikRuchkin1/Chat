@@ -22,14 +22,14 @@ function Message({ avatar, text, user, date, isMe, isReaded, attachments }) {
           ) : (
             <img src={noReaded} className="message__icon-readed" alt="Message no read" />
           )}
-          <div className="message__attachments">
-            {attachments &&
-              attachments.map((item) => (
-                <div className="message__attachments-item">
-                  <img src={item.url} alt={item.filename} />
-                </div>
-              ))}
-          </div>
+        </div>
+        <div className="message__attachments">
+          {attachments &&
+            attachments.map((item) => (
+              <div className="message__attachments-item">
+                <img src={item.url} alt={item.filename} />
+              </div>
+            ))}
         </div>
         <span className="message__date">
           {

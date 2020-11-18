@@ -6,7 +6,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="wrapper">
-        <Route path={['/', '/login']} component={Auth} exact />
+        <Route path={['/', '/register', '/login']} component={Auth} exact />
         <Route path="/im" component={Home} exact />
       </div>
     );
