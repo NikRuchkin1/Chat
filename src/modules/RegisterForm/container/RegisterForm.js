@@ -7,7 +7,6 @@ export default withFormik({
   validateFunc: (values) => {
     let errors = {};
     const validate = validateFunc({ isAuth: false });
-    const test
 
     Object.keys(values).forEach((key) => validate[key] && validate[key](errors, values[key]));
 
