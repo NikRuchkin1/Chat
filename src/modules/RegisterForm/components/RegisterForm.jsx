@@ -25,7 +25,7 @@ const RegisterForm = (props) => {
             <Form.Item
               validateStatus={!touched.email ? '' : errors.email ? 'error' : 'success'}
               hasFeedback
-              help={errors.email}>
+              help={!touched.email ? '' : errors.email}>
               <Input
                 id="email"
                 size="large"
@@ -48,7 +48,7 @@ const RegisterForm = (props) => {
             <Form.Item
               name="first password"
               validateStatus={!touched.password ? '' : errors.password ? 'error' : 'success'}
-              help={errors.password}>
+              help={!touched.password ? '' : errors.password}>
               <Input
                 size="large"
                 prefix={<LockOutlined type="lock" style={{ color: 'rgba(0,0,0,0.25)' }} />}
