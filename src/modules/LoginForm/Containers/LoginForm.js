@@ -3,9 +3,14 @@ import { withFormik } from 'formik';
 import validateForm from 'utils/validations';
 
 export default withFormik({
+  enableReinitialize: true,
+  mapPropsToValues: () => ({
+    email: '',
+    password: '',
+  }),
   validate: (values) => {
     let errors = {};
-    validateForm({ isAuth: false, values, errors });
+    validateForm({ isAuth: true, values, errors });
 
     return errors;
   },
@@ -14,5 +19,5 @@ export default withFormik({
       alert(JSON.stringify(values, null, 2));
     }, 1000);
   },
-  displayName: 'RegisterForm',
+  displayName: 'LoginForm',
 })(LoginForm);

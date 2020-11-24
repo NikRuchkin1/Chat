@@ -3,6 +3,7 @@ import { Form, Input } from 'antd';
 import { Button, Block } from 'components';
 import { UserOutlined, LockOutlined, MailOutlined, InfoCircleTwoTone } from '@ant-design/icons';
 import { NavLink } from 'react-router-dom';
+import { validateField } from 'utils/helpers';
 
 const success = false;
 const RegisterForm = (props) => {
@@ -23,13 +24,13 @@ const RegisterForm = (props) => {
               remember: true,
             }}>
             <Form.Item
-              validateStatus={!touched.email ? '' : errors.email ? 'error' : 'success'}
+              validateStatus={validateField('email', touched, errors)}
               hasFeedback
-              help={!touched.email ? '' : errors.email}>
+              help={!touched.email ? null : errors.email}>
               <Input
                 id="email"
                 size="large"
-                prefix={<UserOutlined type="mail" style={{ color: 'rgba(0,0,0,0.25)' }} />}
+                prefix={<MailOutlined type="lock" style={{ color: 'rgba(0,0,0,0.25)' }} />}
                 placeholder="E-mail"
                 value={values.email}
                 onChange={handleChange}
@@ -39,16 +40,16 @@ const RegisterForm = (props) => {
             <Form.Item name="name">
               <Input
                 size="large"
-                prefix={<MailOutlined type="lock" style={{ color: 'rgba(0,0,0,0.25)' }} />}
+                prefix={<UserOutlined type="mail" style={{ color: 'rgba(0,0,0,0.25)' }} />}
                 type="name"
                 placeholder="Ваше имя"
               />
             </Form.Item>
 
             <Form.Item
-              name="first password"
-              validateStatus={!touched.password ? '' : errors.password ? 'error' : 'success'}
-              help={!touched.password ? '' : errors.password}>
+              name="password"
+              validateStatus={validateField('password', touched, errors)}
+              help={!touched.password ? null : errors.password}>
               <Input
                 size="large"
                 prefix={<LockOutlined type="lock" style={{ color: 'rgba(0,0,0,0.25)' }} />}
@@ -62,14 +63,15 @@ const RegisterForm = (props) => {
             </Form.Item>
 
             <Form.Item
-              name="pass"
-              validateStatus={!touched.password ? '' : errors.password ? 'error' : 'success'}>
+              name="password2"
+              validateStatus={validateField('password', touched, errors)}
+              help={!touched.password ? null : errors.password}>
               <Input
                 size="large"
                 prefix={<LockOutlined type="lock" style={{ color: 'rgba(0,0,0,0.25)' }} />}
                 placeholder="Повторите пароль"
-                id="password"
-                type="password"
+                type="password2"
+                name="password2"
                 value={values.password}
                 onChange={handleChange}
                 onBlur={handleBlur}

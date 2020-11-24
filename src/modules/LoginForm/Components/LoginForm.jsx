@@ -3,9 +3,11 @@ import { Form, Input } from 'antd';
 import { Button, Block } from 'components';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
+import { validateField } from 'utils/helpers';
 
 const LoginForm = (props) => {
   const { values, touched, errors, handleChange, handleBlur, handleSubmit } = props;
+
   return (
     <div>
       <div className="auth__top">
@@ -21,9 +23,9 @@ const LoginForm = (props) => {
             remember: true,
           }}>
           <Form.Item
-            validateStatus={!touched.email ? '' : errors.email ? 'error' : 'success'}
+            validateStatus={validateField('email', touched, errors)}
             hasFeedback
-            help={!touched.email ? '' : errors.email}>
+            help={!touched.email ? null : errors.email}>
             <Input
               id="email"
               size="large"
@@ -36,9 +38,10 @@ const LoginForm = (props) => {
           </Form.Item>
 
           <Form.Item
-            name="first password"
-            validateStatus={!touched.password ? '' : errors.password ? 'error' : 'success'}
-            help={!touched.password ? '' : errors.password}>
+            hasFeedback
+            // validateStatus={!touched.password ? '' : errors.password ? 'error' : 'success'}
+            help={!touched.password ? null : errors.password}
+            validateStatus={validateField('email', touched, errors)}>
             <Input
               size="large"
               prefix={<LockOutlined type="lock" style={{ color: 'rgba(0,0,0,0.25)' }} />}
