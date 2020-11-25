@@ -30,6 +30,10 @@ function Home() {
           },
         ]}
       />
+      <Message
+        avatar="https://sun1-29.userapi.com/impf/c851236/v851236624/1042ea/8WukqITT6jA.jpg?size=50x0&quality=88&crop=0,0,1000,1000&sign=d69f5386a0dc7f7e472cf46259eac9c1&ava=1"
+        isTyping
+      />
     </section>
   );
 }

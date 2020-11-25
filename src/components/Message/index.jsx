@@ -6,16 +6,27 @@ import noReaded from '../../assets/img/noreaded.svg';
 
 import './Message.scss';
 
-function Message({ avatar, text, user, date, isMe, isReaded, attachments }) {
+function Message({ avatar, text, user, date, isMe, isReaded, attachments, isTyping }) {
   return (
-    <div className={classNames('message', { 'message--isme': isMe })}>
+    <div
+      className={classNames('message', {
+        'message--isme': isMe,
+        'message--is-typing': isTyping,
+      })}>
       <div className="message__avatar">
         <img src={avatar} alt={`Avatar ${user.fullname}`} />
       </div>
       <div className="message__content">
         <div className="message__boxBubble">
           <div className="message__bubble">
-            <p className="message__text">{text}</p>
+            {text && <p className="message__text">{text}</p>}
+            {isTyping && (
+              <div className="message__typing">
+                <span className=""></span>
+                <span className=""></span>
+                <span className=""></span>
+              </div>
+            )}
           </div>
           {isMe && isReaded ? (
             <img src={readed} className="message__icon-readed" alt="Message read" />
@@ -31,13 +42,15 @@ function Message({ avatar, text, user, date, isMe, isReaded, attachments }) {
               </div>
             ))}
         </div>
-        <span className="message__date">
-          {
-            //3 lesson 50 min
-            // distanceInWordsToNow(date)
-            date
-          }
-        </span>
+        {date && (
+          <span className="message__date">
+            {
+              //3 lesson 50 min
+              // distanceInWordsToNow(date)
+              date
+            }
+          </span>
+        )}
       </div>
     </div>
   );
@@ -53,6 +66,7 @@ Message.propTypes = {
   text: PropTypes.string,
   date: PropTypes.string,
   attachments: PropTypes.array,
+  isTyping: PropTypes.bool,
 };
 
 export default Message;
