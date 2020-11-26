@@ -12,22 +12,25 @@ function Message({ avatar, text, user, date, isMe, isReaded, attachments, isTypi
       className={classNames('message', {
         'message--isme': isMe,
         'message--is-typing': isTyping,
+        'message--image': attachments && attachments.length === 1,
       })}>
       <div className="message__avatar">
         <img src={avatar} alt={`Avatar ${user.fullname}`} />
       </div>
       <div className="message__content">
         <div className="message__boxBubble">
-          <div className="message__bubble">
-            {text && <p className="message__text">{text}</p>}
-            {isTyping && (
-              <div className="message__typing">
-                <span className=""></span>
-                <span className=""></span>
-                <span className=""></span>
-              </div>
-            )}
-          </div>
+          {(text || isTyping) && (
+            <div className="message__bubble">
+              {text && <p className="message__text">{text}</p>}
+              {isTyping && (
+                <div className="message__typing">
+                  <span className=""></span>
+                  <span className=""></span>
+                  <span className=""></span>
+                </div>
+              )}
+            </div>
+          )}
           {isMe && isReaded ? (
             <img src={readed} className="message__icon-readed" alt="Message read" />
           ) : (
