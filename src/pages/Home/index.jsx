@@ -9,6 +9,9 @@ function Home() {
       <div className="dialogs">
         <DialogItem />
       </div>
+      <div className="dialogs">
+        <DialogItem />
+      </div>
       {/* <Dialogs
         items={[
           {
