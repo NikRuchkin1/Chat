@@ -1,5 +1,5 @@
 import React from 'react';
-import { Message, DialogItem } from 'components';
+import { DialogItem } from 'components';
 
 import './Home.scss';
 
@@ -9,7 +9,9 @@ function Home() {
       <div className="dialogs">
         <DialogItem />
       </div>
-
+      <div className="dialogs">
+        <DialogItem />
+      </div>
       {/* <Dialogs
         items={[
           {
