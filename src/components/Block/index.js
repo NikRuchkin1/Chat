@@ -7,6 +7,7 @@ const Block = ({ children, className }) => (
   <div className={classNames('block', className)}>
     {children}
     <div></div>
+    <span>123</span>
   </div>
 );
 
