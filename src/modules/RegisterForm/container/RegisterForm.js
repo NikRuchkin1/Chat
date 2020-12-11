@@ -3,6 +3,7 @@ import RegisterForm from '../components/RegisterForm';
 import validateForm from 'utils/validations';
 
 export default withFormik({
+  //123
   enableReinitialize: true,
   mapPropsToValues: () => ({
     email: '',
