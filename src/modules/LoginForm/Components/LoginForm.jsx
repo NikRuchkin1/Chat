@@ -7,6 +7,7 @@ import { validateField } from 'utils/helpers';
 
 const LoginForm = (props) => {
   const { values, touched, errors, handleChange, handleBlur, handleSubmit } = props;
+  const test;
 
   return (
     <div>
