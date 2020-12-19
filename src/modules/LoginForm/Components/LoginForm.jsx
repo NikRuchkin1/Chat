@@ -8,7 +8,7 @@ import { validateField } from 'utils/helpers';
 const LoginForm = (props) => {
   const
   const { values, touched, errors, handleChange, handleBlur, handleSubmit } = props;
-  //testkjwf
+  //
   return (
     <div>
       <div className="auth__top">
